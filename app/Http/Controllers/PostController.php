@@ -12,7 +12,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
     }
 
     /**
@@ -47,12 +47,8 @@ class PostController extends Controller
         ]);
 
         $request->session()->flash('alert-success', 'posts are successfully inserted');
-        return redirect()->route('posts.create');
-        // if ($request->session()->get('alert-success')) {
-        //     return "posts successfully inserted";
-        // } else {
-        //     return "posts are not inserted";
-        // }
+        // return redirect()->route('posts.create');        //redirect
+        return to_route('posts.create');
     }
 
     /**
