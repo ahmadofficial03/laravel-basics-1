@@ -29,7 +29,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "title" => "required|min:3|max:15",
+            "title" => "required|min:3|max:25",
             "description" => "required|min:3|max:255",
             "is_published" => "required",
             "is_active" => "required"
@@ -45,14 +45,14 @@ class PostController extends Controller
             "is_published" => $request->is_published,
             "is_active" => $request->is_active
         ]);
-        dd('post is successfully inserted');
 
-        $request->session()->put('alert-success', 'posts are successfully inserted');
-        if ($request->session()->get('alert-success')) {
-            return "posts successfully inserted";
-        } else {
-            return "posts are not inserted";
-        }
+        $request->session()->flash('alert-success', 'posts are successfully inserted');
+        return redirect()->route('posts.create');
+        // if ($request->session()->get('alert-success')) {
+        //     return "posts successfully inserted";
+        // } else {
+        //     return "posts are not inserted";
+        // }
     }
 
     /**

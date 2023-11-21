@@ -36,6 +36,15 @@
             </ul>
         </div>
         @endif
+
+        <!-- SESSION -->
+        @if(Session::has('alert-success'))
+        <div class="alert alert-success" role="alert">
+            {{session::get('alert-success')}}
+        </div>
+        </div>
+        @endif
+
         <div class="form-group mt-3">
             <label>Post Title:</label>
             <input type="text" name="title" class="form-control" placeholder="Title" value="{{old('title')}}">
@@ -74,6 +83,9 @@
     <script>
         $('#form').parsley();
     </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
