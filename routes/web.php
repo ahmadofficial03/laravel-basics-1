@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
 
@@ -214,3 +215,20 @@ Route::get('test', function () {
 // Route::get('posts/delete', [OldPostController::class, 'destroy']);
 
 Route::resource('posts', PostController::class);
+
+/*
+
+SESSIONS
+
+*/
+
+// Route::get('test', function () {
+//     Session::put('login', "login successfully");
+//     Session::forget('login');             // Unset Session
+//     Session::flush();                     // for unset all sessions
+//     if (Session::has('login')) {
+//         return "Session is set";
+//     } else {
+//         return "Session is no set";
+//     }
+// });

@@ -42,7 +42,7 @@
         </div>
         <div class="form-group mt-3">
             <label>Post Description:</label>
-            <textarea class="form-control" name="description" placeholder="Enter description">value="{{old('description')}}"</textarea>
+            <textarea class="form-control" name="description" placeholder="Enter description">{{old('description')}}</textarea>
         </div>
         <div class="form-group mt-3">
             <label>Published</label>

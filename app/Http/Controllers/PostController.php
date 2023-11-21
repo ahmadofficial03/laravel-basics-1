@@ -46,6 +46,13 @@ class PostController extends Controller
             "is_active" => $request->is_active
         ]);
         dd('post is successfully inserted');
+
+        $request->session()->put('alert-success', 'posts are successfully inserted');
+        if ($request->session()->get('alert-success')) {
+            return "posts successfully inserted";
+        } else {
+            return "posts are not inserted";
+        }
     }
 
     /**
